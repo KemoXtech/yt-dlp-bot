@@ -7,7 +7,13 @@ import subprocess
 import re
 # Create a Client instance with your API ID and API hash
 #allowed_ids = [ID]
-app = Client("App_Title", api_id="API_ID", api_hash="API_HASH", bot_token="BOT_TOKEN")
+# Fetch API_ID, API_HASH, and BOT_TOKEN from environment variables
+api_id = int(os.environ['API_ID'])
+api_hash = os.environ['API_HASH']
+bot_token = os.environ['BOT_TOKEN']
+
+# Create a Client instance
+app = Client("App_Title", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 # Global dictionary to store video format details
 links_data = {}
