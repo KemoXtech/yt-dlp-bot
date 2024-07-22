@@ -1,0 +1,14 @@
+services:
+  - name: your-service-name
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    env:
+      - key: API_ID
+        fromService: your-secrets-service
+        name: API_ID
+      - key: API_HASH
+        fromService: your-secrets-service
+        name: API_HASH
+      - key: BOT_TOKEN
+        fromService: your-secrets-service
+        name: BOT_TOKEN
